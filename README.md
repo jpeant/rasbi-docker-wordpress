@@ -35,13 +35,15 @@ $ docker pull mariadb:latest
 
 It is very important that you change the username and password:
 
-```environment:
+```
+environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: your-name-here!!
       WORDPRESS_DB_PASSWORD: your-password-here!
 ```
 and
-```environment:
+```
+environment:
       MYSQL_DATABASE: wp-db
       MYSQL_USER: your-name-here!!
       MYSQL_PASSWORD: your-password-here!!
@@ -52,7 +54,8 @@ Password has to be the same in WORDPRESS_DB_PASSWORD and MYSQL_PASSWORD.
 
 Ports can be modified at:
 
-```ports:
+```
+ports:
       - 8080:80
 ```
 
