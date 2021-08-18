@@ -1,0 +1,35 @@
+# Docker-compose instructions for WordPress in Raspberry Pi
+# Author: Jpeant
+
+version: '1.1'
+
+services:
+
+  wordpress:
+    image: arm64v8/wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: your-name-here!!
+      WORDPRESS_DB_PASSWORD: your-password-here!!
+      WORDPRESS_DB_NAME: wp-db
+    volumes:
+      - wordpress:/var/www/html
+
+ db:
+    platform: linux/arm64
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: wp-db
+      MYSQL_USER: your-name-here!!
+      MYSQL_PASSWORD: your-password-here!!
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
