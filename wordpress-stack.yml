@@ -1,7 +1,7 @@
 # Docker-compose instructions for WordPress in Raspberry Pi
 # Author: Jpeant
 
-version: '1.1'
+version: '2'
 
 services:
 
